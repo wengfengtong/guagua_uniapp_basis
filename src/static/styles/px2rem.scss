@@ -1,0 +1,4 @@
+$browser-default-font-size: 75px !default;//变量的值可以根据自己需求定义
+@function pxTorem($px){
+    @return $px / $browser-default-font-size * 1rem;
+}

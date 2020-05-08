@@ -1,0 +1,59 @@
+{
+	"pages": [
+		{
+			"path": "pages/home/index"
+		},
+		{
+			"path": "pages/login/index"
+		},
+		{
+			"path": "pages/login/bind"
+		},
+		{
+			"path": "pages/user/index",
+			"style": {}
+		},
+		{
+			"path": "pages/p2pVideo/index",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/p2pVideo/answer",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/manyVideo/index",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		}
+	],
+	"tabBar": {
+		"backgroundColor": "#fff",
+		"selectedColor": "#1BCBB9",
+		"list": [
+			{
+				"pagePath": "pages/home/index",
+				"text": "首页",
+				"iconPath": "/static/imgs/footerTab/footer-home.png",
+				"selectedIconPath": "/static/imgs/footerTab/footer-home-active.png"
+			},
+			{
+				"pagePath": "pages/user/index",
+				"text": "我的",
+				"iconPath": "/static/imgs/footerTab/footer-my.png",
+				"selectedIconPath": "/static/imgs/footerTab/footer-my-active.png"
+			}
+		]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "呱呱应用",
+		"navigationBarBackgroundColor": "#1bcbb9",
+		"backgroundColor": "#F8F8F8"
+	}
+}
