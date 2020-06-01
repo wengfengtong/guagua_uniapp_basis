@@ -1,8 +1,13 @@
 
 import v from "./validate";
+import auth from "./auth";
 import { conmonUrl } from "../config/index"
 
-// uniapp的方法转promise
+/**
+ * uniapp的方法转promise
+ * @param {string} method  uniapp的原生方法名 
+ * @param {object} option  其他配置
+ */
 export const toPromise = (method, option) => {
 	return new Promise((resolve, reject) => {
 		uni[method]({
@@ -13,9 +18,13 @@ export const toPromise = (method, option) => {
 	})
 }
 
-//判断是否为指定场景
+/**
+ * 判断是否为指定场景
+ * @param {string | array} scene 
+ * @example [1043,1073]  || '1073'
+ */
 export const jugeScene = (scene) => {
-	let options = wx.getLaunchOptionsSync()
+	let options = uni.getLaunchOptionsSync()
 	var pages = getCurrentPages(); //获取加载的页面
 	if (scene instanceof Array) {
 		return scene.indexOf(options.scene) > -1 && pages.length == 1 ? true : false
@@ -25,7 +34,7 @@ export const jugeScene = (scene) => {
 
 }
 
-//更新版本方式
+// 自动更新版本方法
 export const updataVarsion = () => {
 	const updateManager = uni.getUpdateManager();
 	updateManager.onCheckForUpdate((res) => {
@@ -53,7 +62,8 @@ export const updataVarsion = () => {
 	});
 }
 
-// ios时间格式化
+
+// ios时间格式化 （兼容处理）
 export const timeCycle = (time) => {
 	return time.replace(/\-/g, '/');
 }
@@ -67,16 +77,16 @@ export const isH5 = function () {
 };
 
 //判断是否登录
-export const jugeIsLogin = () => {
-	const token = wx.getStorageSync("token") || null;
-	return !!token
+export const isLogin = () => {
+	const refresh_token = auth.getRefreshToken();
+	const access_token = auth.getAccessToken()
+	return refresh_token && access_token
 }
 
 // 下载文件
 export const downloadFile = (id, name) => {
 	let suffix = getFileSuffix(name)
 	let url = `${conmonUrl}/${id}${suffix}`
-	console.log(url)
 	return toPromise("downloadFile", { url })
 }
 
@@ -89,7 +99,7 @@ export const getFileSuffix = (filename) => {
 	return type;
 }
 
-// 上传图片到服务器
+// 上传文件
 export const uploadFile = ({
 	url,
 	filePath,

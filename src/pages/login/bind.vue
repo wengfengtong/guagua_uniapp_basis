@@ -10,7 +10,7 @@
     </view>
     <view class="bottom">
       <button class="bindBtn" @click="hendleBindUser">绑定账号</button>
-      <view class="prev" @click="$uniPage.back()">上一步</view>
+      <view class="prev" @click="$guaroute.back()">上一步</view>
     </view>
   </view>
 </template>
@@ -19,7 +19,6 @@
 import { uniIcons } from "@dcloudio/uni-ui";
 import { setToken } from "../../utils/auth.js";
 import { showToast, unsetObj } from "@/utils/util.js";
-import IMController from "../../utils/yunxin/nim";
 
 export default {
   components: { uniIcons },
@@ -43,19 +42,15 @@ export default {
         });
         return;
       }
-      // 初始化IM实例
-      uni.imController = new IMController(
-        "cloudAccount",
-        "cloudAccountPassword"
-      );
+
       const pages = getCurrentPages();
       if (
         pages.length < 2 ||
         pages[pages.length - 1].route == "pages/login/bind"
       ) {
-        this.$uniPage.reLaunch("/pages/home/index");
+        this.$guaroute.reLaunch("/pages/home/index");
       } else {
-        this.$uniPage.back();
+        this.$guaroute.back();
       }
     }
   }

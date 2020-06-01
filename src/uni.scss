@@ -15,12 +15,14 @@
 /* 颜色变量 */
 
 /* 行为相关颜色 */
-$uni-color-primary: #007aff;
-$uni-color-success: #4cd964;
+$uni-color-primary: #1bcbb9;
+$uni-color-success: #0884bd;
 $uni-color-warning: #f0ad4e;
 $uni-color-error: #dd524d;
 
 /* 文字基本颜色 */
+
+$uni-text-white:#fff;//基本色
 $uni-text-color:#333;//基本色
 $uni-text-color-inverse:#fff;//反色
 $uni-text-color-grey:#999;//辅助灰色，如加载更多的提示信息
@@ -58,6 +60,7 @@ $uni-border-radius-circle: 50%;
 $uni-spacing-row-sm: 10px;
 $uni-spacing-row-base: 20upx;
 $uni-spacing-row-lg: 30upx;
+$uni-spacing:32upx;
 
 /* 垂直间距 */
 $uni-spacing-col-sm: 8upx;

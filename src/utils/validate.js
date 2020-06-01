@@ -31,6 +31,11 @@ class Validate {
     return Object.prototype.toString.call(value) === '[object Object]';
   }
 
+  isEmptyObject(obj) {
+    let arr = Object.keys(obj);
+    return arr.length === 0
+  }
+
   isObjectObject(value) {
     return typeof value === 'object';
   }

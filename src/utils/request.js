@@ -16,6 +16,21 @@ class HTTP {
     data,
     options
   }) {
+
+    // 容错处理1  判断是否有url
+    if (!url) {
+      console.error('request need url')
+      throw new Error({
+        source: 'http class',
+        message: 'request need url',
+      })
+    }
+
+    // 大小写容错
+    method = method.toLowerCase()
+
+
+
     // console.log(options)
     if (options && options.loading) {
       //是否需要加载中
@@ -25,10 +40,29 @@ class HTTP {
       })
     }
     return new Promise((resolve, reject) => {
+      //缓存中的token信息
+      let Authorization;
+      // auth 处理
+      if (url === 'cms/user/refresh') {
+        const refreshToken = getToken('refresh_token')
+        if (!refreshToken) {
+          return new Error('获取refresh_token异常！')
+        }
+        Authorization = refreshToken
+      } else {
+        // 有access_token
+        const accessToken = getToken('access_token')
+        if (!accessToken) {
+          return new Error('获取access_token异常！')
+        }
+        Authorization = accessToken
+      }
+
       /** 此处可配置一下拦截*/
       if (!url.startsWith('http')) {
         url = (options && options.baseUrl) ? options.baseUrl + url : baseUrl + url;
       }
+
       //发起请求
       uni.request({
         url: url,
@@ -36,7 +70,7 @@ class HTTP {
         data,
         header: {
           'content-type': options && options.contentType ? options.contentType : 'application/json',
-          token: uni.getStorageSync('token') //获取缓存中的token信息
+          token: Authorization
         },
         success: res => {
           //取消加载中的loading

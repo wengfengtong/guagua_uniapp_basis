@@ -5,19 +5,19 @@ import store from './store/index';
 import Pages from './utils/router';
 
 // 全局组件
-import login from "@/components/login.vue";
+import icon from "@/components/common/icon.vue";
 
-Vue.component('login', login)
+Vue.component('g-icon', icon)
 
 
 Vue.config.productionTip = false
 
 App.mpType = 'app'
 
-uni.$api = api;
 Vue.prototype.$bus = new Vue();
 Vue.prototype.$store = store;
-Vue.prototype.$uniPage = new Pages();
+uni.$guaroute = uni.guaroute = new Pages();
+uni.$api = uni.api = api;
 
 const app = new Vue({
 	...App

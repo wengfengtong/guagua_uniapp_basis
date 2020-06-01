@@ -17,7 +17,6 @@
 <script>
 import { setToken } from "../../utils/auth.js";
 import { login, showToast, unsetObj } from "@/utils/util.js";
-import IMController from "../../utils/yunxin/nim";
 
 export default {
   data() {
@@ -31,11 +30,6 @@ export default {
     async hendleWxLogin(e) {
       login(e).then(res => {
         console.log(res);
-        // 初始化IM实例
-        uni.imController = new IMController(
-          "cloudAccount",
-          "cloudAccountPassword"
-        );
       });
     }
   }
