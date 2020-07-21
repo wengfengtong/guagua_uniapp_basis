@@ -7,6 +7,7 @@ import {
   getToken,
   removeToken
 } from './auth.js';
+
 import { showModal, showToast } from "./util";
 
 class HTTP {
@@ -29,9 +30,6 @@ class HTTP {
     // 大小写容错
     method = method.toLowerCase()
 
-
-
-    // console.log(options)
     if (options && options.loading) {
       //是否需要加载中
       uni.showLoading({

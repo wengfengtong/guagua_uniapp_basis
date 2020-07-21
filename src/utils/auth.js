@@ -1,4 +1,4 @@
-import v from './validate'
+import { isEmptyObject } from './validate'
 
 // 获取AccessToken
 export function getAccessToken() {
@@ -102,7 +102,7 @@ export function setUserInfo(data) {
   if (!data) {
     throw Error('data 不能为空！')
   }
-  if (v.isEmptyObject(data)) {
+  if (isEmptyObject(data)) {
     throw Error('data 不能为空对象！')
   }
   uni.setStorage({
@@ -129,5 +129,5 @@ export function removeUserInfo() {
       console.error('remove user_info fail', err);
     }
   });
- 
+
 }
