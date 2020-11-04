@@ -2,19 +2,34 @@
   <view class="container">
     <view class="uesrInfo">
       <view class="avatarBox">
-        <image v-if="userData.avatarUrl" mode="widthFix" :src="userData.avatarUrl" />
-        <open-data wx:else type="userAvatarUrl"></open-data>
+        <image
+          v-if="userData.avatarUrl"
+          mode="widthFix"
+          :src="userData.avatarUrl"
+        />
+        <!-- <open-data
+          wx:else
+          type="userAvatarUrl"
+        ></open-data> -->
       </view>
       <view class="nameBox">
-        <text class="nickName" v-if="userData.nickName">{{userData.nickName}}</text>
-        <button class="loginBtn" v-else open-type="getUserInfo" bindgetuserinfo="getUserInfo">立即登录</button>
+        <text
+          class="nickName"
+          v-if="userData.nickName"
+        >{{userData.nickName}}</text>
+        <button
+          class="loginBtn"
+          v-else
+          open-type="getUserInfo"
+          bindgetuserinfo="getUserInfo"
+        >立即登录</button>
       </view>
     </view>
     <view class="block"></view>
   </view>
 </template>
 <script>
-import { showModal, showToast } from "../../utils/util";
+import { showModal, showToast } from "../../utils/index";
 import { removeToken, removeUserInfo } from "../../utils/auth";
 
 export default {
@@ -22,8 +37,8 @@ export default {
     return {
       userData: {
         nickName: "wengbb",
-        avatarUrl: "http://public.wengbb.cn/%E9%9D%92%E8%9B%99-%E7%AB%96.png"
-      }
+        avatarUrl: "http://public.wengbb.cn/%E9%9D%92%E8%9B%99-%E7%AB%96.png",
+      },
     };
   },
   onLoad() {},
@@ -36,22 +51,22 @@ export default {
           count: 1,
           sizeType: ["compressed"],
           sourceType: ["album", "camera"],
-          enableCrop: true
+          enableCrop: true,
         },
-        success: result => {
+        success: (result) => {
           uni.showLoading({
-            title: "上传中..."
+            title: "上传中...",
           });
           const tempFilePaths = result.tempFilePaths;
         },
         fail(err) {
           showToast({
-            msg: err
+            msg: err,
           });
-        }
+        },
       });
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>

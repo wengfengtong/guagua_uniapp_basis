@@ -12,9 +12,9 @@
 </template>
 <script>
 import { uniPopup, uniIcons } from "@dcloudio/uni-ui";
-import { login } from "@/utils/util.js";
+import { login } from "@/utils/index.js";
 export default {
-  name: "login",
+  name: "Login",
   components: { uniIcons },
   methods: {
     mounted() {},

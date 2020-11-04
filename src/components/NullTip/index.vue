@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: "unllTips",
+  name: "NullTip",
   props: {
     title: {
       type: String,

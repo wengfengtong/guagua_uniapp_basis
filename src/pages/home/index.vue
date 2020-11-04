@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import navigation from "@/components/common/navigation.vue";
+import navigation from "@/components/Navigation/index.vue";
 import { uniNoticeBar } from "@dcloudio/uni-ui";
 export default {
   components: {

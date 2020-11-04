@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: "navigation",
+  name: "Navigation",
   props: {
     type: {
       type: String,

@@ -5,7 +5,7 @@ import store from './store/index';
 import Pages from './utils/router';
 
 // 全局组件
-import icon from "@/components/common/icon.vue";
+import icon from "@/components/Icon/index.vue";
 
 Vue.component('g-icon', icon)
 

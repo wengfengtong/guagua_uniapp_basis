@@ -7,8 +7,7 @@
 </template>
 <script>
 export default {
-  name: "formId",
-
+  name: "FormId",
   methods: {
     //点击即触发获取formId
     catchSubmit(e) {

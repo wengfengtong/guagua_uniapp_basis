@@ -1,8 +1,8 @@
 
-import CommonApi from "./common/commonApi"
-import UserApi from "./user/userApi"
+import OtherApi from "./other/index"
+import UserApi from "./user/index"
 
 export default {
-  commonApi: new CommonApi(),
+  other: new OtherApi(),
   UserApi: new UserApi(),
 }

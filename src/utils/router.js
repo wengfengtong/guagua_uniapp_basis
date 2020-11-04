@@ -1,5 +1,5 @@
 import { isString, isNumber } from './validate';
-import { objToString } from './util'
+import { objToString } from './index'
 
 
 class Pages {
@@ -30,6 +30,10 @@ class Pages {
 			return
 		}
 	}
+	/**
+	 * 替换路由，不保存历史
+	 * @param {Object} rule 
+	 */
 	replace(rule) {
 		if (isString(rule)) {
 			if (!rule.startsWith("/")) {
@@ -52,7 +56,10 @@ class Pages {
 			});
 		}
 	}
-
+	/**
+	 * 
+	 * @param {*} rule 
+	 */
 	reLaunch(rule) {
 		if (isString(rule)) {
 			if (!rule.startsWith("/")) {
@@ -75,6 +82,10 @@ class Pages {
 			});
 		}
 	}
+	/**
+	 * 跳转到tabbar栏
+	 * @param {Object} rule 
+	 */
 	switchTab(rule) {
 		if (isString(rule)) {
 			if (!rule.startsWith("/")) {
@@ -97,7 +108,10 @@ class Pages {
 			});
 		}
 	}
-
+	/**
+	 * 返回
+	 * @param {Object} rule 
+	 */
 	back(rule) {
 		if (!rule) {
 			uni.navigateBack();

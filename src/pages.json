@@ -26,26 +26,26 @@
 			{
 				"pagePath": "pages/home/index",
 				"text": "首页",
-				"iconPath": "/static/imgs/tabbar/home.png",
-				"selectedIconPath": "/static/imgs/tabbar/home_active.png"
+				"iconPath": "/static/tabbar/home.png",
+				"selectedIconPath": "/static/tabbar/home_active.png"
 			},
 			{
 				"pagePath": "pages/square/index",
-				"iconPath": "/static/imgs/tabbar/square.png",
-				"selectedIconPath": "/static/imgs/tabbar/square_active.png",
+				"iconPath": "/static/tabbar/square.png",
+				"selectedIconPath": "/static/tabbar/square_active.png",
 				"text": "广场"
 			},
 			{
 				"pagePath": "pages/message/index",
-				"iconPath": "/static/imgs/tabbar/message.png",
-				"selectedIconPath": "/static/imgs/tabbar/message_active.png",
+				"iconPath": "/static/tabbar/message.png",
+				"selectedIconPath": "/static/tabbar/message_active.png",
 				"text": "消息"
 			},
 			{
 				"pagePath": "pages/user/index",
 				"text": "我的",
-				"iconPath": "/static/imgs/tabbar/user.png",
-				"selectedIconPath": "/static/imgs/tabbar/user_active.png"
+				"iconPath": "/static/tabbar/user.png",
+				"selectedIconPath": "/static/tabbar/user_active.png"
 			}
 		]
 	},

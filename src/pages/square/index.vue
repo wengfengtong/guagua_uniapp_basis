@@ -18,7 +18,7 @@
 
     <view class="today-topic">
       <view class="title-box">
-        <image src="@/static/imgs/icons/titleIcon.png" />
+        <image src="@/static/icons/remen.png" />
         <text class="title-text">今日话题</text>
       </view>
       <view class="content-box">
@@ -47,8 +47,8 @@
 </template>
 
 <script>
-import topic from "@/components/common/topic.vue";
-import segmentTab from "@/components/common/segmentTab.vue";
+import topic from "@/components/Topic/index.vue";
+import segmentTab from "@/components/SegmentTab/index.vue";
 export default {
   components: {
     topic,

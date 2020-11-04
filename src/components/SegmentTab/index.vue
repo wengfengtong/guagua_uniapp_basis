@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: "segmentTab",
+  name: "SegmentTab",
   props: {
     data: {
       type: [Object, Array]

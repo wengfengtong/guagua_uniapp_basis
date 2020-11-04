@@ -40,7 +40,7 @@
 
 <script>
 export default {
-  name: "topic",
+  name: "Topic",
   props: {
     data: {
       type: Object

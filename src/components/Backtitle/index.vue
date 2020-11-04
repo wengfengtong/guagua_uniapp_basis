@@ -20,10 +20,10 @@
     uniIcons
   } from '@dcloudio/uni-ui';
   export default {
+    name: "Backtitle",
     components: {
       uniIcons
     },
-    name: "backtitle",
     props: {
       title: {
         type: String,

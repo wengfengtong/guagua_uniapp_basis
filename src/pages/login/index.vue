@@ -16,7 +16,7 @@
 
 <script>
 import { setToken } from "../../utils/auth.js";
-import { login, showToast, unsetObj } from "@/utils/util.js";
+import { login, showToast, unsetObj } from "@/utils/index.js";
 
 export default {
   data() {

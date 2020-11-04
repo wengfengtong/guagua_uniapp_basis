@@ -8,7 +8,7 @@ import {
   removeToken
 } from './auth.js';
 
-import { showModal, showToast } from "./util";
+import { showModal, showToast } from "./index";
 
 class HTTP {
   request({

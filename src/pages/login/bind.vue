@@ -18,7 +18,7 @@
 <script>
 import { uniIcons } from "@dcloudio/uni-ui";
 import { setToken } from "../../utils/auth.js";
-import { showToast, unsetObj } from "@/utils/util.js";
+import { showToast, unsetObj } from "@/utils/index.js";
 
 export default {
   components: { uniIcons },

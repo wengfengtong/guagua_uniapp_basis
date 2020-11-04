@@ -5,54 +5,61 @@
       :class="['iconfont','g-icon',name === '' ? '' : 'gua-' + name ]"
       :style="{fontSize:size+'px',color:color?color:''}"
     ></i>
-    <image v-else-if="type==='img'" :src="imgSrc" :style="{width:size+'px',height:size+'px'}" />
-    <uni-icons v-else-if="type=='uni'" :type="name" :size="size" :color="color"></uni-icons>
+    <image
+      v-else-if="type==='img'"
+      :src="imgSrc"
+      :style="{width:size+'px',height:size+'px'}"
+    />
+    <uni-icons
+      v-else-if="type=='uni'"
+      :type="name"
+      :size="size"
+      :color="color"
+    ></uni-icons>
   </view>
 </template>
-
 <script>
 import { uniIcons } from "@dcloudio/uni-ui";
 export default {
-  name: "icon",
+  name: "Icon",
   components: {
-    uniIcons
+    uniIcons,
   },
   props: {
     type: {
       type: String,
-      default: "icon"
+      default: "icon",
     },
     name: {
       type: String,
-      default: ""
+      default: "",
     },
     src: {
       type: String,
-      default: ""
+      default: "",
     },
     color: {
       type: String,
-      default: "white"
+      default: "white",
     },
     size: {
       type: [String, Number],
-      default: "28"
-    }
+      default: "28",
+    },
   },
   computed: {
     imgSrc() {
-      if (this.type != "img") {
-        return;
-      }
+      if (this.type != "img") return;
       try {
         if (this.src) {
-          return require(this.src);
+          return require(`${this.src}`);
+        } else {
+          return require(`../../static/icons/${this.name}.png`);
         }
-        return require(`../../static/icons/${this.name}.png`);
       } catch (error) {
         console.error("图片不存在，请检查路径是否正确！");
       }
-    }
+    },
   },
   created() {
     if (!this.name) {
@@ -62,8 +69,8 @@ export default {
   methods: {
     hendleClick() {
       this.$emit("click");
-    }
-  }
+    },
+  },
 };
 </script>
 

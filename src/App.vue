@@ -1,13 +1,13 @@
 <script>
 import { getAccessToken, getUserInfo } from "./utils/auth";
 import Emitter from "./utils/event";
-import { toPromise, updataVarsion } from "./utils/util";
+import { toPromise, updataVarsion } from "./utils/index";
 
 export default {
   onLaunch: function(option) {
     console.log("App Launch", option);
     // 检测版本更新
-    updataVarsion();
+    // updataVarsion();
     // 存储启动参数到参库
     this.$store.commit("setAppLaunchOptions", option);
     // 挂载回调接口转promise
